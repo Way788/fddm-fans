@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+	  
+function random(min, max) {
+  if (arguments.length < 2) {
+    max = min;
+    min = 0;
+  }
+  if (min > max) {
+    var hold = max;
+    max = min;
+    min = hold;
+  }
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function maxOrbit(x, y) {
+  var max = Math.max(x, y),
+    diameter = Math.round(Math.sqrt(max * max + max * max));
+  return diameter / 2;
+  //星星移动范围，值越大范围越小，
+}
+
+class Star {
+  constructor(p, ctx, canvas2) {
+    this.maxStars = 1100; //星星数量,默认1100
+    this.orbitRadius = random(maxOrbit(p.w, p.h));
+
+    this.ctx = ctx;
+    this.canvas2 = canvas2;
+
+    this.radius = random(60, this.orbitRadius) / 20; //星星大小,值越大星星越小,默认8
+  
+    this.orbitX = p.w / 2;
+    this.orbitY = p.h / 2;
+    this.timePassed = random(0, this.maxStars);
+    this.speed = random(this.orbitRadius) / 400000; //星星移动速度,值越大越慢,默认5W
+    this.alpha = random(2, 10) / 10;
+  }
+  draw() {
+    const x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX;
+    const y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY;
+    let twinkle = random(10);
+
+    if (twinkle === 1 && this.alpha > 0) {
+      this.alpha -= 0.05;
+    } else if (twinkle === 2 && this.alpha < 1) {
+      this.alpha += 0.05;
+    }
+
+    this.ctx.globalAlpha = this.alpha;
+    this.ctx.drawImage(
+      this.canvas2,
+      x - this.radius / 2,
+      y - this.radius / 2,
+      this.radius,
+      this.radius
+    );
+    this.timePassed += this.speed;
+  }
+}
+</script>
+	<title>房东的猫-音乐节</title>
+
+</head>
+<body>
+	<style>
+	
+/*
+通用属性
+*/
+*{
+	margin: 0;
+	padding: 0;
+	top:5vh;
+}
+
+body{
+	background-color:#060D19;
+}
+#starBg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      z-index: 1;
+    }
+.container{
+	width: 1000px;
+	height: 450px;
+	margin: 10px auto;
+	position: relative;
+}
+
+.pic{
+	width: 150px;
+}
+
+.container img{
+	padding: 10px 10px 15px;
+	border: 1px solid #ddd;
+	background:white;
+	box-shadow: 2px 2px 3px rgba(50,50,50,0.4);
+	z-index: 2;
+	-webkit-transition:all 0.5s ease-in;
+	position: absolute;
+}
+
+.container img:hover{
+	z-index: 3;
+	box-shadow: 15px 15px 20px rgba(50,50,50,0.4);
+	transform: rotate(0deg) scale(4.00);
+	-webkit-transform:rotate(0deg) scale(4.00);
+}
+
+.pic1{
+	left: 130px;
+	top:50px;
+	transform: rotate(-5deg);
+	-webkit-transform:rotate(-5deg);
+}
+
+.pic2{
+	left: 10px;
+	top:170px;
+	transform: rotate(-40deg);
+	-webkit-transform:rotate(-40deg);
+}
+
+.pic3{
+	left: 10px;
+	top:350px;
+	transform: rotate(40deg);
+	-webkit-transform:rotate(40deg);
+}
+
+.pic4{
+	left: 140px;
+	top:460px;
+	transform: rotate(5deg);
+	-webkit-transform:rotate(5deg);
+}
+
+.pic5{
+	left: 430px;
+	top:100px;
+	transform: rotate(-70deg);
+	-webkit-transform:rotate(-70deg);
+}
+
+.pic6{
+	left: 370px;
+	top:260px;
+	transform: rotate(10deg);
+	-webkit-transform:rotate(-70deg);
+}
+
+.pic7{
+	left: 315px;
+	top:420px;
+	transform: rotate(-70deg);
+	-webkit-transform:rotate(-70deg);
+}
+
+.pic8{
+	left:530px;
+	top:100px;
+	transform: rotate(70deg);
+	-webkit-transform:rotate(70deg);
+}
+
+.pic9{
+	left: 590px;
+	top:260px;
+	transform: rotate(70deg);
+	-webkit-transform:rotate(70deg);
+}
+.pic10{
+	left: 645px;
+	top:420px;
+	transform: rotate(70deg);
+	-webkit-transform:rotate(70deg);
+}
+.pic11{
+	left: 480px;
+	top:350px;
+	transform: rotate(0deg);
+	-webkit-transform:rotate(0deg);
+}
+.pic12{
+	left: 750px;
+	top:50px;
+	transform: rotate(0deg);
+	-webkit-transform:rotate(0deg);
+}
+.pic13{
+	left: 920px;
+	top:50px;
+	transform: rotate(0deg);
+	-webkit-transform:rotate(0deg);
+}
+.pic14{
+	left: 835px;
+	top:180px;
+	transform: rotate(90deg);
+	-webkit-transform:rotate(90deg);
+}
+.pic15{
+	left: 835px;
+	top:330px;
+	transform: rotate(90deg);
+	-webkit-transform:rotate(90deg);
+}
+.pic16{
+	left: 835px;
+	top:480px;
+	transform: rotate(0deg);
+	-webkit-transform:rotate(90deg);
+}
+	</style>
+		<div>
+    <canvas id="starBg"></canvas>
+  </div>
+  <script type="text/javascript">
+    let stars = [];
+    const maxStars = 1100; // 星星数量
+
+    function initCanvas() {
+      const canvas = document.getElementById("starBg");
+      const ctx = canvas.getContext("2d");
+      const w = (canvas.width = window.innerWidth);
+      const h = (canvas.height = window.innerHeight);
+
+      const canvas2 = document.createElement("canvas");
+      const ctx2 = canvas2.getContext("2d");
+      canvas2.width = 100;
+      canvas2.height = 100;
+      const half = canvas2.width / 2;
+      const gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+      gradient2.addColorStop(0.025, "#CCC");
+      gradient2.addColorStop(0.1, "hsl(217, 61%, 33%)");
+      gradient2.addColorStop(0.25, "hsl(217, 64%, 6%)");
+      gradient2.addColorStop(1, "transparent");
+
+      ctx2.fillStyle = gradient2;
+      ctx2.beginPath();
+      ctx2.arc(half, half, half, 0, Math.PI * 2);
+      ctx2.fill();
+
+      for (var i = 1; i < maxStars; i++) {
+        const star = new Star({w, h}, ctx, canvas2);
+        stars[i] = star;
+      }
+      function animation() {
+        ctx.globalCompositeOperation = "source-over";
+        ctx.globalAlpha = 0.8; //尾巴
+        ctx.fillStyle = "hsla(217, 64%, 6%, 2)";
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.globalCompositeOperation = "lighter";
+        for (let i = 1; i < stars.length; i++) {
+          stars[i].draw();
+        }
+
+        window.requestAnimationFrame(animation);
+      }
+      animation();
+    }
+    initCanvas();
+  </script>
+	<div class="container">
+		<img class="pic pic1" src="https://s3.328888.xyz/2022/08/15/hhY3y.jpg" alt="1">
+		<img class="pic pic2" src="https://s3.328888.xyz/2022/08/15/hhnPC.jpg" alt="2">
+		<img class="pic pic3" src="https://s3.328888.xyz/2022/08/15/hhAXd.jpg" alt="3">
+		<img class="pic pic4" src="https://s3.328888.xyz/2022/08/15/hhZuU.jpg" alt="4">
+		<img class="pic pic5" src="https://s3.328888.xyz/2022/08/15/hhWSR.jpg" alt="5">
+		<img class="pic pic6" src="https://s3.328888.xyz/2022/08/15/hhioB.jpg" alt="6">
+		<img class="pic pic7" src="https://s3.328888.xyz/2022/08/15/h3NWI.jpg" alt="7">
+		<img class="pic pic8" src="https://s3.328888.xyz/2022/08/15/h3mBj.jpg" alt="8">
+		<img class="pic pic9" src="https://s3.328888.xyz/2022/08/15/h3DPr.jpg" alt="9">
+		<img class="pic pic10" src="https://s3.328888.xyz/2022/08/15/h3FYK.jpg" alt="10">
+		<img class="pic pic11" src="https://s3.328888.xyz/2022/08/15/h3j0m.jpg" alt="11">
+		<img class="pic pic12" src="https://s3.328888.xyz/2022/08/15/h3TkJ.jpg" alt="12">
+		<img class="pic pic13" src="https://s3.328888.xyz/2022/08/15/h30ek.jpg" alt="13">
+		<img class="pic pic14" src="https://s3.328888.xyz/2022/08/15/h36mE.jpg" alt="14">
+		<img class="pic pic15" src="https://s3.328888.xyz/2022/08/15/h3htw.jpg" alt="15">
+		<img class="pic pic16" src="https://s3.328888.xyz/2022/08/15/h33Wi.jpg" alt="16">
+		
+	</div>
+
+</body>
+</html>
