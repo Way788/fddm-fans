@@ -10,7 +10,7 @@
             --w: 400px; 
             --h: 600px; 
         }
-        body {
+        .box1 {
             margin: 0;
             display: flex;
             height: 800px;
@@ -72,10 +72,17 @@
             background-color: rgba(63,63,63,.8);
             outline: none;
         }
-		
+		.box2{
+			position: absolute;
+			background-color: #FF6239;
+		}
     </style>
 </head>
 <body>
+	<div class="box2" style="z-index: 10000">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=30635613&auto=1&height=66"></iframe>
+	</div>
+	<div class="box1">
     <div id="book">
         <div class="book-cover one-page" >
 		<center>
@@ -458,7 +465,7 @@
         <button>&lt;</button>
         <button>&gt;</button>
     </div>
-
+	</div>
     <script>
         // 总页数
         const PAGECOUNT = 104
