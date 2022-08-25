@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巡演合照</title>
+    <style>
+        :root {
+            --w: 800px; 
+            --h: 500px; 
+        }
+		
+        .box1 {
+            margin: 0;
+            display: flex;
+            height: 800px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #0c1c38;
+        }
+
+        #book {
+            height: var(--h);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            perspective: 1600px;
+            transform-style: preserve-3d;
+        }
+        .book-cover {
+            /* 封面比页面每条边宽25px */
+            height: calc(var(--h) + 50px);
+            width: calc(var(--w) + 50px);
+            position: absolute;
+            background-image: linear-gradient(to bottom, #ff5c33, #ff9166, #3dd6f5);
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            transition: 1s;
+            transform-origin: left;
+            backface-visibility: visible;
+            border: .5px solid black;
+        }
+        .book-page {
+            height: var(--h);
+            width: var(--w);
+            position: absolute;
+            z-index: 100;
+            transition: 1s;
+            /* 封面比页面每条边宽的长度 */
+            transform-origin: -25px;
+            background-size: cover;
+            backface-visibility: visible;
+        }
+
+        #control {
+            margin-top: 60px;
+            user-select: none;
+			align-items: center;
+			
+        }
+        #control button {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            border: 0;
+            margin: 0px 15px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50%;
+            background-color: rgba(63,63,63,.8);
+            outline: none;
+        }
+		.box2{
+			position: absolute;
+			background-color:#FF5F36;
+		}
+		
+    </style>
+</head>
+<body>
+	<div class="box2" style="z-index: 10000">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=513360721&auto=1&height=66"></iframe></div>
+	<div class="box1">
+	
+    <div id="book">
+        <div class="book-cover one-page">
+		<center>
+		<h><font style="font-family: '华光行楷_CNKI';font-size:50px;color:#4DAEFE;text-decoration: underline;;"><br><br>关于彻夜不眠<br>的事情<br><br></font></h>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:30px;color:#25D1FE;text-decoration: underline;">
+			王心怡 & 吴佩岭</font>
+		</p>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:25px;color:#09EAFE;text-decoration: underline;">
+			2022巡演</font>
+		</p>
+		</center>
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wFv56.jpg" alt="1" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wFdDP.jpg" alt="2" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOLvI.jpg" alt="3" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOEyX.jpg" alt="4" width="100%" height="100%" object-fit="cover">
+        </div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOlwj.jpg" alt="5" width="100%" height="100%" object-fit="cover">
+		</div>
+		<div class="book-cover one-page">
+		<center>
+		<h><font style="font-family: '华光行楷_CNKI';font-size:50px;color:#4DAEFE;text-decoration: underline;;"><br><br>关于彻夜不眠<br>的事情<br><br></font></h>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:30px;color:#25D1FE;text-decoration: underline;">
+			王心怡 & 吴佩岭</font>
+		</p>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:25px;color:#09EAFE;text-decoration: underline;">
+			2021巡演</font>
+		</p>
+		</center>
+		</div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOC6s.jpg" alt="1" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOaV0.jpg" alt="2" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOkHp.jpg" alt="3" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wO5Fo.jpg" alt="4" width="100%" height="100%" object-fit="cover">
+        </div>
+		<div class="book-cover one-page">
+		<center>
+		<h><font style="font-family: '华光行楷_CNKI';font-size:50px;color:#4DAEFE;text-decoration: underline;;"><br><br>房东的猫「你我」<br>七周年演唱会<br><br></font></h>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:30px;color:#25D1FE;text-decoration: underline;">
+			王心怡 & 吴佩岭</font>
+		</p>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:25px;color:#09EAFE;text-decoration: underline;">
+			2020</font>
+		</p>
+		</center>
+		</div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOI8y.jpg" alt="1" width="100%" height="100%" object-fit="cover">
+		</div>
+        
+		<div class="book-cover one-page">
+		<center>
+		<h><font style="font-family: '华光行楷_CNKI';font-size:50px;color:#4DAEFE;text-decoration: underline;;"><br><br>跨年演唱会</font></h>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:30px;color:#25D1FE;text-decoration: underline;">
+			王心怡 & 吴佩岭</font>
+		</p>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:25px;color:#09EAFE;text-decoration: underline;">
+			2019</font>
+		</p>
+		</center>
+		</div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOZZh.jpg" alt="1" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-cover one-page">
+		<center>
+		<h><font style="font-family: '华光行楷_CNKI';font-size:50px;color:#4DAEFE;text-decoration: underline;;"><br><br>「生活」</font></h>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:30px;color:#25D1FE;text-decoration: underline;">
+			王心怡 & 吴佩岭</font>
+		</p>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:25px;color:#09EAFE;text-decoration: underline;">
+			2019</font>
+		</p>
+		</center>
+		</div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOAGi.jpg" alt="1" width="100%" height="100%" object-fit="cover">
+		</div>
+		
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOnLw.jpg" alt="2" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wORUg.jpg" alt="3" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-cover one-page">
+		<center>
+		<h><font style="font-family: '华光行楷_CNKI';font-size:50px;color:#4DAEFE;text-decoration: underline;;"><br><br>由于时间与地域<br>的关系<br><br></font></h>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:30px;color:#25D1FE;text-decoration: underline;">
+			王心怡 & 吴佩岭</font>
+		</p>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:25px;color:#09EAFE;text-decoration: underline;">
+			2018年度巡演</font>
+		</p>
+		</center>
+		</div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wj4sd.jpg" alt="1" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wj0hC.jpg" alt="2" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wj6qU.jpg" alt="3" width="100%" height="100%" object-fit="cover">
+		</div>
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wjhjB.jpg" alt="4" width="100%" height="100%" object-fit="cover">
+        </div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOdss.jpg" alt="5" width="100%" height="100%" object-fit="cover">
+        </div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOWTn.jpg" alt="6" width="100%" height="100%" object-fit="cover">
+        </div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wOvq0.jpg" alt="7" width="100%" height="100%" object-fit="cover">
+        </div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wjLOp.jpg" alt="8" width="100%" height="100%" object-fit="cover">
+        </div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wjNKo.jpg" alt="9" width="100%" height="100%" object-fit="cover">
+        </div>
+		<div class="book-cover one-page">
+		<center>
+		<h><font style="font-family: '华光行楷_CNKI';font-size:50px;color:#4DAEFE;text-decoration: underline;;"><br><br>台北</font></h>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:30px;color:#25D1FE;text-decoration: underline;">
+			王心怡 & 吴佩岭</font>
+		</p>
+		<p><font style="font-family: '华光行楷_CNKI';font-size:25px;color:#09EAFE;text-decoration: underline;">
+			2018</font>
+		</p>
+		</center>
+		</div>
+		<div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wjBQP.jpg" alt="1" width="100%" height="100%" object-fit="cover">
+		</div>
+		
+        <div class="book-page one-page">
+		<img src="https://s1.328888.xyz/2022/08/24/wjwN6.jpg" alt="2" width="100%" height="100%" object-fit="cover">
+		</div>
+        
+        <div class="book-cover one-page">
+		
+		</div>
+    </div>
+    <div id="control">
+        <button>&lt;</button>
+        <button>&gt;</button>
+    </div>
+	</div>
+	
+    <script>
+        // 总页数
+        const PAGECOUNT = 33
+        // 当前页面编号
+        let pageNo = 0
+
+        // 内容页
+        let pages = document.querySelectorAll('.book-page')
+        // 封面页
+        let cover = document.querySelectorAll('.book-cover')
+        // 按钮
+        let btn = document.querySelectorAll('#control button')
+        // 
+        let book = document.querySelector('#book')
+        // 所有页
+        let allPages = document.querySelectorAll('.one-page')
+
+        function init() {
+            // 初始化内容页的图片
+            for (let index = 0; index < pages.length; index++) {
+                pages[index].style.backgroundImage = "url('" + [index+1] + ".jpg')"
+                pages[index].style.zIndex = PAGECOUNT - index - 1
+            }
+            cover[0].style.zIndex = PAGECOUNT
+            cover[1].style.zIndex = 1
+
+            // 默认页面为封面，左按钮无效
+            btn[0].style.backgroundColor = "rgba(110, 110, 110, 0.5)"
+            btn[0].style.color = "darkgray"
+            btn[0].disabled = true
+            
+            // 左翻页
+            btn[0].onclick = function() {
+                pageNo -- 
+                // 如果当前是最后一页，并往前翻
+                if ((PAGECOUNT - 1) == pageNo) {
+                    allPages[pageNo].style.transform = 'rotateY(0deg)'
+                    //( 240px + 50px ) * 0.5
+                    book.style.transform = 'translateX(145px)'
+                    btn[1].style.backgroundColor = "rgba(63, 63, 63, 0.8)"
+                    btn[1].style.color = "white"
+                    btn[1].disabled = false   
+                }
+                else {
+                    allPages[pageNo].style.transform = 'rotateY(0deg)'
+                }
+                allPages[pageNo].style.zIndex = PAGECOUNT - pageNo
+
+                if( 0 == pageNo ) {
+                    btn[0].style.backgroundColor = "rgba(110, 110, 110, 0.5)"
+                    btn[0].style.color = "darkgray"
+                    btn[0].disabled = true
+                    book.style.transform = 'translateX(0px)'
+                }
+            }
+
+            // 右翻页
+            btn[1].onclick = function() {
+                // 如果当前是第一页，并往后翻
+                if ( 0 == pageNo ) {
+                    allPages[pageNo].style.transform = 'rotateY(-180deg)'
+                    //( 240px + 50px ) * 0.5
+                    book.style.transform = 'translateX(145px)'
+                    btn[0].style.backgroundColor = "rgba(63, 63, 63, 0.8)"
+                    btn[0].style.color = "white"
+                    btn[0].disabled = false   
+                }
+                else {
+                    allPages[pageNo].style.transform = 'rotateY(-180deg)'
+                }
+
+                allPages[pageNo].style.zIndex = 1000 + pageNo
+                pageNo ++
+
+                if( PAGECOUNT == pageNo ) {
+                    btn[1].style.backgroundColor = "rgba(110, 110, 110, 0.5)"
+                    btn[1].style.color = "darkgray"
+                    btn[1].disabled = true
+                    book.style.transform = 'translateX(300px)'
+                }
+            }
+        }
+        init()
+    </script>
+</body>
+
+</html>
