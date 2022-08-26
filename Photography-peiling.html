@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>摄影——少年佩</title>
+    <link rel="stylesheet" href="168.css">
+	<style>
+	*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 100%窗口宽高 */
+    height: 100vh;
+    /* 弹性布局 居中显示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+.container{
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+/* 容器四边的渐变黑 */
+.shades{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* 元素不对指针事件做出反应 */
+    pointer-events: none;
+}
+.shades .left{
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to left,transparent,#16161a);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.shades .right{
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to right,transparent,#16161a);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.shades .top{
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to top,transparent,#16161a);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.shades .bottom{
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(to bottom,transparent,#16161a);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.imgs{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.imgs img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+}
+.imgs a{
+    opacity: 0;
+    transition: 0.2s;
+}
+.imgs a.active{
+    opacity: 1;
+}
+.titles{
+    width: 297px;
+    height: 416px;
+    position: absolute;
+    top: 19%;
+    right: 3%;
+    background: linear-gradient(to bottom,transparent,#16161a 22%,#16161a 81%,transparent);
+	
+	overflow-y: visible;
+	overflow-x:hidden; 
+}
+.titles a{
+    display: block;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    width: 100%;
+    padding: 12px 20px;
+}
+.titles .title2{
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: normal;
+    /* 副标题默认隐藏 */
+    display: none;
+}
+/* 标题活动态 */
+.titles a.active{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right,rgba(255,255,255,0.25) 20%,transparent 90%);
+}
+.titles a.active .title2{
+    /* 活动态下副标题显示 */
+    display: block;
+}
+		.music{
+			position: absolute;
+			top: 25px;
+			right:2%;
+			z-index: 10000;
+		}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="imgs">
+            <a href="#" class="active">
+                <img src="https://s1.328888.xyz/2022/08/26/Gkd6B.jpg" alt="1">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/GkvIR.jpg" alt="2">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1EHP.jpg" alt="3">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1NF6.jpg" alt="4">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1l5X.jpg" alt="5">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1mzI.jpg" alt="6">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1FEj.jpg" alt="7">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1Owr.jpg" alt="8">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1uRm.jpg" alt="9">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1j8K.jpg" alt="10">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1467.jpg" alt="11">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G16Vk.jpg" alt="12">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1TpE.jpg" alt="13">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G1B9w.jpg" alt="14">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/26/G13FJ.jpg" alt="15">
+            </a>
+        </div>
+        <div class="shades">
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="right"></div>
+            <div class="bottom"></div>
+        </div>
+        <div class="titles">
+            <a href="#" class="active">
+                <div class="title">1</div>
+                <div class="title2">未知</div>
+            </a>
+            <a href="#">
+                <div class="title">2</div>
+                <div class="title2">未知</div>
+            </a>
+            <a href="#">
+                <div class="title">3</div>
+                <div class="title2">未知</div>
+            </a>
+            <a href="#">
+                <div class="title">4</div>
+                <div class="title2">未知</div>
+            </a>
+            <a href="#">
+                <div class="title">5</div>
+                <div class="title2">未知</div>
+            </a>
+            <a href="#">
+                <div class="title">6</div>
+                <div class="title2">未知</div>
+            </a>
+            <a href="#">
+                <div class="title">7</div>
+                <div class="title2">未知</div>
+            </a>
+            <a href="#">
+                <div class="title">8</div>
+                <div class="title2">未知</div>
+            </a>
+			<a href="#">
+                <div class="title">9</div>
+                <div class="title2">未知</div>
+            </a>
+			<a href="#">
+                <div class="title">10</div>
+                <div class="title2">未知</div>
+            </a>
+			<a href="#">
+                <div class="title">11</div>
+                <div class="title2">未知</div>
+            </a>
+			<a href="#">
+                <div class="title">12</div>
+                <div class="title2">未知</div>
+            </a>
+			<a href="#">
+                <div class="title">13</div>
+                <div class="title2">未知</div>
+            </a>
+			<a href="#">
+                <div class="title">14</div>
+                <div class="title2">未知</div>
+            </a>
+			<a href="#">
+                <div class="title">15</div>
+                <div class="title2">未知</div>
+            </a>
+        </div>
+		<div class="music">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=413829644&auto=1&height=66"></iframe>
+		</div>
+    </div>
+	
+</body>
+<script>
+const titles=document.querySelectorAll('.titles a');  //标题集合
+const imgs=document.querySelectorAll('.imgs a');  //图片集合
+let curIndex=0,timer=null;  //当前banner下标，定时器
+
+// 移除active样式
+function removeActive(){
+    titles.forEach(item=>{
+        item.classList.remove('active');
+    })
+    imgs.forEach(item=>{
+        item.classList.remove('active');
+    })
+}
+
+// 切换banner
+function changeBanner(index){
+    removeActive();
+    titles[index].classList.add('active');
+    imgs[index].classList.add('active');
+}
+
+// 自动播放banner
+function autoBanner(){
+    timer=setInterval(function(){
+        curIndex++;
+        if(curIndex>titles.length-1){
+            curIndex=0;
+        }
+        changeBanner(curIndex);
+    },3000)
+}
+
+// 遍历绑定鼠标事件
+titles.forEach((item,index)=>{
+    // 鼠标移入事件
+    item.addEventListener('mouseenter',function(){
+        curIndex=index;
+        changeBanner(index);
+        clearInterval(timer);
+    })
+    // 鼠标移出事件
+    item.addEventListener('mouseleave',function(){
+        autoBanner();
+    })
+})
+
+// 初始化自动播放banner
+autoBanner();</script>
+</html>
+
