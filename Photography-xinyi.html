@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>摄影——红鼻子小黑</title>
+	<style>
+	*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* 100%窗口宽高 */
+    height: 100vh;
+    /* 弹性布局 居中显示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+.container{
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+/* 容器四边的渐变黑 */
+.shades{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* 元素不对指针事件做出反应 */
+    pointer-events: none;
+}
+.shades .left{
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to left,transparent,#16161a);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.shades .right{
+    width: 160px;
+    height: 100%;
+    background: linear-gradient(to right,transparent,#16161a);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.shades .top{
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to top,transparent,#16161a);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.shades .bottom{
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(to bottom,transparent,#16161a);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.imgs{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.imgs img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+}
+.imgs a{
+    opacity: 0;
+    transition: 0.2s;
+}
+.imgs a.active{
+    opacity: 1;
+}
+.titles{
+    width: 297px;
+    height: 416px;
+    position: absolute;
+    top: 19%;
+    right: 3%;
+    background: linear-gradient(to bottom,transparent,#16161a 22%,#16161a 81%,transparent);
+	
+	overflow-y: visible;
+	overflow-x:hidden; 
+}
+.titles a{
+    display: block;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    width: 100%;
+    padding: 12px 20px;
+}
+.titles .title2{
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: normal;
+    /* 副标题默认隐藏 */
+    display: none;
+}
+/* 标题活动态 */
+.titles a.active{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right,rgba(255,255,255,0.25) 20%,transparent 90%);
+}
+.titles a.active .title2{
+    /* 活动态下副标题显示 */
+    display: block;
+}
+		.music{
+			position: absolute;
+			top: 25px;
+			right:2%;
+			z-index: 10000;
+		}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="imgs">
+            <a href="#" class="active">
+                <img src="https://s1.328888.xyz/2022/08/27/Gp53I.jpg" alt="1">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpKXr.jpg" alt="2">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gp9Pj.jpg" alt="3">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpouK.jpg" alt="4">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpIS7.jpg" alt="5">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gp2om.jpg" alt="6">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gpslk.jpg" alt="7">
+            </a>
+            <a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpMkE.jpg" alt="8">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpfWw.jpg" alt="9">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpPJJ.jpg" alt="10">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gp83i.jpg" alt="11">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpUPg.jpg" alt="12">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpxYh.jpg" alt="13">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gptun.jpg" alt="14">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gpze0.jpg" alt="15">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gpyos.jpg" alt="16">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpSko.jpg" alt="17">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpQlp.jpg" alt="18">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpetF.jpg" alt="19">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GprWS.jpg" alt="20">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GppB5.jpg" alt="21">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gpn0C.jpg" alt="22">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpqfN.jpg" alt="23">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpXYy.jpg" alt="24">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpAod.jpg" alt="25">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpReU.jpg" alt="26">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpimB.jpg" alt="27">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpWkR.jpg" alt="28">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GpdtP.jpg" alt="29">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gpvd6.jpg" alt="30">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqLBX.jpg" alt="31">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqNfI.jpg" alt="32">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gqlnj.jpg" alt="33">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqF2K.jpg" alt="34">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqD0r.jpg" alt="35">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gqum7.jpg" alt="36">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq4yE.jpg" alt="37">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq01k.jpg" alt="38">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq6dJ.jpg" alt="39">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gqhbw.jpg" alt="40">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq3fi.jpg" alt="41">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqBng.jpg" alt="42">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqG2n.jpg" alt="43">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gqw4h.jpg" alt="44">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqCrs.jpg" alt="45">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqkD0.jpg" alt="46">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq11p.jpg" alt="47">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq5yo.jpg" alt="48">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq9vF.jpg" alt="49">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqcbS.jpg" alt="50">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gqog5.jpg" alt="51">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq2AN.jpg" alt="52">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqV4y.jpg" alt="53">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqsIC.jpg" alt="54">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqMrd.jpg" alt="55">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gqg5B.jpg" alt="56">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqfDU.jpg" alt="57">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/GqUvP.jpg" alt="58">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gq8yR.jpg" alt="59">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRFNd.jpg" alt="60">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GROaU.jpg" alt="61">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRjJB.jpg" alt="62">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRuiR.jpg" alt="63">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GR43P.jpg" alt="64">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GR6P6.jpg" alt="65">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRTXX.jpg" alt="66">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GR3uI.jpg" alt="67">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRBoj.jpg" alt="68">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRbSr.jpg" alt="69">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRGlK.jpg" alt="70">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRCkm.jpg" alt="71">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRkWk.jpg" alt="72">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRaJ7.jpg" alt="73">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GR9PJ.jpg" alt="74">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GR5BE.jpg" alt="75">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRoui.jpg" alt="76">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRKYw.jpg" alt="77">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GR2og.jpg" alt="78">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRIeh.jpg" alt="79">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRsln.jpg" alt="80">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRPt0.jpg" alt="81">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRMks.jpg" alt="82">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GR8Bo.jpg" alt="83">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRfWp.jpg" alt="84">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRUfF.jpg" alt="85">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/27/Gowgj.jpg" alt="86">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRt05.jpg" alt="87">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRy2N.jpg" alt="88">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRzey.jpg" alt="89">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRSkd.jpg" alt="90">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRQmC.jpg" alt="91">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRetU.jpg" alt="92">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRrdB.jpg" alt="93">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRpBR.jpg" alt="94">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRqfP.jpg" alt="95">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRXn6.jpg" alt="96">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRn0X.jpg" alt="97">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRA2I.jpg" alt="98">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRimr.jpg" alt="99">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRRrj.jpg" alt="100">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRW1K.jpg" alt="101">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRvd7.jpg" alt="102">
+            </a>
+			<a href="#">
+                <img src="https://s1.328888.xyz/2022/08/28/GRdym.jpg" alt="103">
+            </a>
+			
+        </div>
+        <div class="shades">
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="right"></div>
+            <div class="bottom"></div>
+        </div>
+        <div class="titles">
+            <a href="#" class="active">
+                <div class="title">1</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+            <a href="#">
+                <div class="title">2</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+            <a href="#">
+                <div class="title">3</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+            <a href="#">
+                <div class="title">4</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+            <a href="#">
+                <div class="title">5</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+            <a href="#">
+                <div class="title">6</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+            <a href="#">
+                <div class="title">7</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+            <a href="#">
+                <div class="title">8</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">9</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">10</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">11</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">12</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">13</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">14</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">15</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">16</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">17</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">18</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">19</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">20</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">21</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">22</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">23</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">24</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">25</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">26</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">27</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">28</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">29</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">30</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">31</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">32</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">33</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">34</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">35</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">36</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">37</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">38</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">39</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">40</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">41</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">42</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">43</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">44</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">45</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">46</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">47</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">48</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">49</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">50</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">51</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">52</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">53</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">54</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">55</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">56</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">57</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">58</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">59</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">60</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">61</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">62</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">63</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">64</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">65</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">66</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">67</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">68</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">69</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">70</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">71</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">72</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">73</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">74</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">75</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">76</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">77</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">78</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">79</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">80</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">81</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">82</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">83</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">84</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">85</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">86</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">87</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">88</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">89</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">90</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">91</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">92</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">93</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">94</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">95</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">96</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">97</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">98</div>
+                <div class="title2">红鼻子小黑</div>
+            </a><a href="#">
+                <div class="title">99</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">100</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">101</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">102</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+			<a href="#">
+                <div class="title">103</div>
+                <div class="title2">红鼻子小黑</div>
+            </a>
+		
+        </div>
+		<div class="music">
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1875283511&auto=1&height=66"></iframe>
+		</div>
+    </div>
+	
+</body>
+<script>
+const titles=document.querySelectorAll('.titles a');  //标题集合
+const imgs=document.querySelectorAll('.imgs a');  //图片集合
+let curIndex=0,timer=null;  //当前banner下标，定时器
+
+// 移除active样式
+function removeActive(){
+    titles.forEach(item=>{
+        item.classList.remove('active');
+    })
+    imgs.forEach(item=>{
+        item.classList.remove('active');
+    })
+}
+
+// 切换banner
+function changeBanner(index){
+    removeActive();
+    titles[index].classList.add('active');
+    imgs[index].classList.add('active');
+}
+
+// 自动播放banner
+function autoBanner(){
+    timer=setInterval(function(){
+        curIndex++;
+        if(curIndex>titles.length-1){
+            curIndex=0;
+        }
+        changeBanner(curIndex);
+    },3000)
+}
+
+// 遍历绑定鼠标事件
+titles.forEach((item,index)=>{
+    // 鼠标移入事件
+    item.addEventListener('mouseenter',function(){
+        curIndex=index;
+        changeBanner(index);
+        clearInterval(timer);
+    })
+    // 鼠标移出事件
+    item.addEventListener('mouseleave',function(){
+        autoBanner();
+    })
+})
+
+// 初始化自动播放banner
+autoBanner();</script>
+</html>
